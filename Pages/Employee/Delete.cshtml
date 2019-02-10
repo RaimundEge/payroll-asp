@@ -1,0 +1,27 @@
+@page "{id}"
+@model Payroll.Pages.Employee.DeleteModel
+
+<div class="header">
+    <h2>Delete Employee</h2>
+</div>
+
+@{ var emp = Model.employee; }
+
+<div class="content">
+    <h2 class="content-subhead">Employee Information</h2>
+    <form method=POST action=/Employee/Confirm/@emp.Id>
+        <table>
+            <tr><td><input type=text readonly name=Name value='@emp.Name'></td></tr>
+            <tr><td><input type=text readonly name=Address value='@emp.Address'></td></tr>
+            <tr><td><input type=text readonly name=Salary value='@emp.Salary'></td></tr>
+
+            <tr><td><input type=text readonly name=ProjectId value='@emp.ProjectId'></td></tr>
+
+            <tr><td><input type=text readonly name=RoutingNumber value='@emp.RoutingNumber'></td></tr>
+            <tr><td><input type=text readonly name=AccountNumber value='@emp.AccountNumber'></td></tr>
+        </table>
+        <p>
+            <button>Confirm Delete</button>
+        </p>
+    </form>
+</div>

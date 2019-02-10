@@ -1,0 +1,40 @@
+@page "{id}"
+@model Payroll.Pages.Employee.EditModel
+
+<div class="header">
+    <h2>@ViewData["action"] Employee</h2>
+</div>
+
+@{ var emp = Model.employee; }
+
+<div class="content">
+    <h2 class="content-subhead">Employee Information</h2>
+    <form method=POST action=/Employee/Update/@emp.Id>
+        <table>
+            <tr><td>Name: </td><td><input type=text name=Name value='@emp.Name' required></td></tr>
+            <tr><td>Address: </td><td><input type=text name=Address value='@emp.Address' required></td></tr>
+            <tr><td>Salary: </td><td><input type=text name=Salary value='@emp.Salary' required></td></tr>
+
+            <tr><td>Project: </td><td><select name=ProjectId>
+                        @foreach (var proj in Model.projects)
+                        {
+                            if (proj.Id == emp.ProjectId)
+                            {
+
+                                <option value=@proj.Id selected>@proj.Title</option>
+                            }
+                            else
+                            {
+                                <option value=@proj.Id>@proj.Title</option>
+                            }
+                        }
+                    </select></td></tr>
+
+            <tr><td>Bank #: </td><td><input type=text name=RoutingNumber value='@emp.RoutingNumber' required></td></tr>
+            <tr><td>Account #: </td><td><input type=text name=AccountNumber value='@emp.AccountNumber' required></td></tr>
+        </table>
+        <p>
+            <button>@ViewData["action"]</button>
+        </p>
+    </form>
+</div>

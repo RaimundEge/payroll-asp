@@ -1,0 +1,21 @@
+@page "{id}"
+@model Payroll.Pages.Project.DeleteModel
+
+<div class="header">
+    <h2>Delete Project</h2>
+</div>
+
+@{ var proj = Model.project; }
+
+<div class="content">
+    <h2 class="content-subhead">Project Information</h2>
+    <form method=POST action=/Project/Confirm/@proj.Id>
+        <table>
+            <tr><td><input type=text readonly name=Title value='@proj.Title'></td></tr>
+            <tr><td><input type=text readonly name=Expense value='@proj.Expense'></td></tr>
+        </table>
+        <p>
+            <button>Confirm Delete</button>
+        </p>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+@page "{id}"
+@model Payroll.Pages.Project.EditModel
+
+<div class="header">
+    <h2>@ViewData["action"] new Project</h2>
+</div>
+
+@{ var emp = Model.project; }
+
+<div class="content">
+    <h2 class="content-subhead">Project Information</h2>
+    <form method=POST action=/Project/Update/@emp.Id>
+        <table>
+            <tr><td>Title: </td><td><input type=text name=Title value='@emp.Title' required></td></tr>
+            <tr><td>Expense: </td><td><input type=text name=Expense value='@emp.Expense' required></td></tr>
+        </table>
+        <p>
+            <button>@ViewData["action"]</button>
+        </p>
+    </form>
+</div>

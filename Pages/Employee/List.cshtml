@@ -1,0 +1,41 @@
+@page "{op}"
+@model Payroll.Pages.Employee.ListModel
+
+<div class="header">
+    <h2>@Model.op Employee Data</h2>
+</div>
+
+<div class="content">
+    <h2 class="content-subhead">Select Employee to @Model.op</h2>
+
+    @if (Model.employees.Count() > 0)
+    {
+        <table class="table">
+            <tr><th>select</th><th>Name</th><th>Address</th></tr>
+
+            @foreach (var item in Model.employees)
+            {
+                <tr>
+                    <td>
+                        <form method=GET action=/Employee/@Model.op/@item.Id>
+                            <button>@Model.op</button>
+                        </form>
+                    </td>
+                    <td>
+                        &nbsp;
+                        @item.Name
+                    </td>
+                    <td>
+                        &nbsp;
+                        @item.Address
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+    @if (Model.employees.Count() == 0)
+    {
+        <p>no matching record found</p>
+    }
+</div>

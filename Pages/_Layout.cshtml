@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Sample ASP.Net Core 2.0 implementation of Manage Employee Data use case.">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+    <link rel="stylesheet" href="/css/side-menu.css">
+    <title>Manage Payroll Data</title>
+</head>
+<body>
+    <div id="layout">
+        <!-- Menu toggle -->
+        <a href="#menu" id="menuLink" class="menu-link">
+            <!-- Hamburger icon -->
+            <span></span>
+        </a>
+
+        <div id="menu">
+            <div class="pure-menu">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item pure-menu-selected"><a href="/" class="pure-menu-link">Home</a></li>
+                    <li class="pure-menu-item"><a href="/Employee/Search/Edit" class="pure-menu-link">Edit Employee</a></li>
+                    <li class="pure-menu-item"><a href="/Employee/Edit/-1" class="pure-menu-link">Create Employee</a></li>
+                    <li class="pure-menu-item"><a href="/Employee/Search/Delete" class="pure-menu-link">Delete Employee</a></li>
+                    <li>&nbsp;</li>
+                    <li class="pure-menu-item"><a href="/Project/Search/Edit" class="pure-menu-link">Edit Project</a></li>
+                    <li class="pure-menu-item"><a href="/Project/Edit/-1" class="pure-menu-link">Create Project</a></li>
+                    <li class="pure-menu-item"><a href="/Project/Search/Delete" class="pure-menu-link">Delete Project</a></li>
+                    <li>&nbsp;</li>
+                    <li class="pure-menu-item"><a href="mailto:ege@niu.edu" class="pure-menu-link">Contact</a></li>
+                    <li>&nbsp;</li>
+                    <li class="pure-menu-item"><a href="/About" class="pure-menu-link">About</a></li>
+                </ul>
+            </div>
+        </div>
+        <script src="/js/ui.js"></script>
+
+        <div>
+            @RenderBody()
+        </div>
+
+        <div id="footer" class="content">
+            Copyright 2018 Ege Consulting Inc.
+        </div>
+    </div>
+</body>
+</html>

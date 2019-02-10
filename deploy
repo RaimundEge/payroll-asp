@@ -1,0 +1,6 @@
+#! /bin/sh
+dotnet publish -c Release
+docker build -t payroll ./bin/Release/netcoreapp2.0/publish/
+docker tag payroll registry.heroku.com/payroll-asp/web
+docker push registry.heroku.com/payroll-asp/web
+

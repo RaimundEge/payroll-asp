@@ -1,0 +1,41 @@
+@page "{op}"
+@model Payroll.Pages.Project.ListModel
+
+<div class="header">
+    <h2>@Model.op Project Data</h2>
+</div>
+
+<div class="content">
+    <h2 class="content-subhead">Select Project to @Model.op</h2>
+
+    @if (Model.projects.Count() > 0)
+    {
+        <table class="table">
+            <tr><th>select</th><th>Title</th><th>Expense</th></tr>
+
+            @foreach (var item in Model.projects)
+            {
+                <tr>
+                    <td>
+                        <form method=GET action=/Project/@Model.op/@item.Id>
+                            <button>@Model.op</button>
+                        </form>
+                    </td>
+                    <td>
+                        &nbsp;
+                        @item.Title
+                    </td>
+                    <td>
+                        &nbsp;
+                        @item.Expense
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+    @if (Model.projects.Count() == 0)
+    {
+        <p>no matching record found</p>
+    }
+</div>
